@@ -1,0 +1,14 @@
+{
+  "prettier/prettier": [
+    "error",
+    {
+      "singleQuote": false,
+      "parser": "vue",
+      "semicolons": true,
+      "htmlWhitespaceSensitivity": "ignore"
+    },
+    {
+      "usePrettierrc": false
+    }
+  ]
+}

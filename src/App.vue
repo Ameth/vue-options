@@ -1,19 +1,29 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <template>
-  <Modal />
+  <div>{{ text }}</div>
+  <div>{{ mivariable }}</div>
 </template>
 
 <script>
-import Modal from "./components/Modal.vue";
+import base from "@/mixins/base";
 
 export default {
   name: "App",
+  mixins: [base],
   data() {
     return {
-      show: false,
+      text: "Hola Vue",
     };
   },
-  components: { Modal },
+  beforeCreate() {
+    console.log("beforeCreate", this.$data, this.$el);
+  },
+  created() {
+    console.log("created", this.text);
+  },
+  mounted() {
+    console.log("mounted", this.$data, this.$el);
+  },
 };
 </script>
 

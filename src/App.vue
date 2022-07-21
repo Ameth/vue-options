@@ -1,16 +1,19 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <template>
-  <Home />
+  <Home :texto="text" />
 </template>
 
-<script>
+<script setup>
 import Home from "@/components/Home.vue";
-export default {
-  name: "App",
-  components: {
-    Home,
-  },
-};
+
+const text = "Dato que viene de una variable por props";
+
+// export default {
+//   name: "App",
+//   components: {
+//     Home,
+//   },
+// };
 </script>
 
 <style>

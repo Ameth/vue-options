@@ -7,11 +7,12 @@
     <div v-show="estado">¡Apareci!</div>
     <div>{{ miobj.count }}</div>
     <div>Siguiente valor: {{ proximo }}</div>
+    <div>Mensaje del abuelo: {{ mensaje }}</div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, watch, computed } from "vue";
+import { ref, reactive, watch, computed, inject } from "vue";
 
 const props = defineProps({
   texto: String,
@@ -19,6 +20,8 @@ const props = defineProps({
 
 const estado = ref(true);
 const miobj = reactive({ count: 0 });
+
+const mensaje = inject("mensaje", "Mensaje por defecto");
 
 // const proximo = computed(() => miobj.count + 1);
 
